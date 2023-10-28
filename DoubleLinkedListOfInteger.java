@@ -3,16 +3,16 @@ import java.util.LinkedList;
 public class DoubleLinkedListOfInteger {
   class Node{
     public int element;
-    public Node next;
+    public Node next, prev;
 
     public Node(int element){
       this.element = element;
       this.next = null;
+      this.prev = null;
     }
   }
 
-  private Node header;
-  private Node trailer;
+  private Node header, trailer;
   private int count;
 
   public DoubleLinkedListOfInteger(int element){
@@ -23,7 +23,8 @@ public class DoubleLinkedListOfInteger {
   }
 
   /* 
-   * Methos is Empty
+   * Method is Empty
+   * Verify if the list is empty.
    * @return true if the list is empty, or false if it´s not.
   */
   public boolean isEmpty(){
@@ -37,27 +38,87 @@ public class DoubleLinkedListOfInteger {
 
   /*
    * Method Size
+   * Verify the size of the list.
    * @return the size of the LinkedList.
    */
   public int size(){
     return count;
   }
 
-// 3. boolean contains(int element): retorna true se a lista contém o elemento e 
-// falso caso contrário 
-
-  /* */
+  /* 
+  * Method contains
+  * Verify if the element informed by parameter is in the list.
+  *@return true if the element informed by parameter is in the list, our false if it does not.
+  */
   public boolean contains(int element){
+    boolean situation = false;
+    if(!isEmpty()){
+      Node nodeAux = header;
+      if(nodeAux.next.element != element){
+        nodeAux= nodeAux.next;
+        situation = false;
+      }else{
+        situation = true;
+      }      
+    }
+    return situation;
+  }
+// 4. int indexOf(int element): retorna a posição da primeira ocorrência onde o 
+// elemento está na lista
+  /*
+  *Method indexOf
+  * Verify if the element is in the list and return the index position.
+  * @return the index position of the element in the list.
+  */
+  public int indexOf(int element){
+    int indexAux = 0;
+    if(!isEmpty()){
+      Node nodeAux = header;
+      if(nodeAux.next.element != element){
+        indexAux++;
+      }
+    }
+    return indexAux;
+  }
+
+  /*
+   * Method Clear
+   * If the list is not empty, clear the list.
+   */
+  public void clear(){
     if(!isEmpty()){
       
     }
   }
-// 4. int indexOf(int element): retorna a posição da primeira ocorrência onde o 
-// elemento está na lista
-// 5. void clear(): limpa a lista
-// 6. void add(int index, int element): insere um elemento na lista na posição
-// indicada por index
-// 7. int get(int index): retorna o elemento da posição indicada por index
+  
+  /*
+   * Method add.
+   * Insert the element passed by parameter in the list
+   */
+  public void add(int index, int element){
+    Node aux = header;
+    int cont = 0;
+    if(!isEmpty()){
+      Node nodeAux = new Node(element);
+      if(cont < index){
+        aux = aux.next;
+        cont++;
+      }
+      nodeAux.next = aux.prev;
+      nodeAux.prev = aux.next.prev;
+      aux.prev.next = nodeAux;
+      aux.next.prev = nodeAux;
+    }
+  }
+
+  /*
+   * Method get
+   * Method return 
+   * @return int index
+   */
+  public int get(int index){}
+
+//A PARTIR DAQUI SÃO DO EDUARDO!!!!
 // 8. int set(index, e): substitui o valor na posição index pelo elemento passado 
 // por parâmetro e retorna o valor antigo. 
 // 9. int removeByIndex (int index): remove o elemento da posição index
