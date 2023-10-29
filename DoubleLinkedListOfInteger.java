@@ -1,25 +1,14 @@
 import java.util.LinkedList;
 
 public class DoubleLinkedListOfInteger {
-  class Node{
-    public int element;
-    public Node next, prev;
-
-    public Node(int element){
-      this.element = element;
-      this.next = null;
-      this.prev = null;
-    }
-  }
-
+  LinkedList<Integer> list = new LinkedList<>();
   private Node header, trailer;
   private int count;
 
-  public DoubleLinkedListOfInteger(int element){
-    Node node = new Node(element);
-    this.header = node;
-    this.trailer = node;
-    this.count = 1;
+  public DoubleLinkedListOfInteger(){
+    this.header = null;
+    this.trailer = null;
+    this.count = 0;
   }
 
   /* 
@@ -119,10 +108,71 @@ public class DoubleLinkedListOfInteger {
    */
   public void clear(){
     if(!isEmpty()){
+      Node nodeAux = header;
+      if(nodeAux.next.element != element){
+        nodeAux= nodeAux.next;
+        situation = false;
+      }else{
+        situation = true;
+      }      
+    }
+    return situation;
+  }
+
+  /*
+  *Method indexOf
+  * Verify if the element is in the list and return the index position.
+  * @return the index position of the element in the list.
+  */
+  public int indexOf(int element){
+    int indexAux = 0;
+    if(!isEmpty()){
+      Node nodeAux = header;
+      if(nodeAux.next.element != element){
+        indexAux++;
+      }
+    }
+    return indexAux;
+  }
+
+  /*
+   * Method Clear
+   * If the list is not empty, clear the list.
+   */
+  public void clear(){
+    if(!isEmpty()){
       
     }
   }
   
+  /*
+   * Method add.
+   * Insert the element passed by parameter in the list
+   */
+  public void add(int index, int element){
+    Node aux = header;
+    int countAux = 0;
+    if(!isEmpty()){
+      Node nodeAux = new Node(element);
+      if(countAux < index){
+        aux = aux.next;
+        countAux++;
+      }
+      nodeAux.next = aux.prev;
+      nodeAux.prev = aux.next.prev;
+      aux.prev.next = nodeAux;
+      aux.next.prev = nodeAux;
+      count++;
+    }
+  }
+
+  /*
+   * Method get
+   * Method return 
+   * @return int index
+   */
+  public int get(int index){}
+
   /*
    * Method add.
    * Insert the element passed by parameter in the list
