@@ -1,11 +1,14 @@
 import java.util.LinkedList;
 
-public class DoubleLinkedListOfInteger {
-  class Node{
+public class DoubleLinkedListOfInteger 
+{
+  class Node 
+  {
     public int element;
     public Node next;
 
-    public Node(int element){
+    public Node(int element) 
+    {
       this.element = element;
       this.next = null;
     }
@@ -15,52 +18,188 @@ public class DoubleLinkedListOfInteger {
   private Node trailer;
   private int count;
 
-  public DoubleLinkedListOfInteger(int element){
+  public DoubleLinkedListOfInteger(int element) 
+  {
     Node node = new Node(element);
     this.header = node;
     this.trailer = node;
     this.count = 1;
   }
 
-  /* 
+
+  /*
    * Methos is Empty
+   * 
    * @return true if the list is empty, or false if it´s not.
-  */
-  public boolean isEmpty(){
-    if(header == null){
+   */
+  public boolean isEmpty() 
+  {
+    if (header == null) 
+    {
       return true;
-    }
-    else{
+    } else 
+    {
       return false;
     }
   }
 
+
+  // 2. int size(): retorna o número de elementos armazenados na lista
   /*
    * Method Size
+   * 
    * @return the size of the LinkedList.
    */
-  public int size(){
+  public int size() 
+  {
     return count;
   }
 
-// 3. boolean contains(int element): retorna true se a lista contém o elemento e 
-// falso caso contrário 
 
+  // 3. boolean contains(int element): retorna true se a lista contém o elemento e
+  // falso caso contrário
   /* */
-  public boolean contains(int element){
-    if(!isEmpty()){
-      
+  public boolean contains(int element) 
+  {
+    if (!isEmpty()) 
+    {
+      Node auxNode = header;
+
+      while (auxNode != null) 
+      {
+        if (auxNode.element == element) 
+        {
+          return true;
+        }
+
+        auxNode = auxNode.next;
+      }
     }
+    return false;
   }
-// 4. int indexOf(int element): retorna a posição da primeira ocorrência onde o 
-// elemento está na lista
-// 5. void clear(): limpa a lista
-// 6. void add(int index, int element): insere um elemento na lista na posição
-// indicada por index
-// 7. int get(int index): retorna o elemento da posição indicada por index
 
 
-// 8. int set(index, e): substitui o valor na posição index pelo elemento
+  // 4. int indexOf(int element): retorna a posição da primeira ocorrência onde o
+  // elemento está na lista
+  /* */
+  public int indexOf(int element) 
+  {
+    if (!isEmpty()) 
+    {
+      int index = 0;
+      Node auxNode = header;
+
+      while (auxNode != null) 
+      {
+        if (auxNode.element == element) 
+        {
+          return index;
+        }
+
+        auxNode = auxNode.next;
+        index++;
+      }
+    }
+    return -1;
+  }
+
+
+  // 5. void clear(): limpa a lista
+  /* */
+  public void clear() 
+  {
+    this.header = null;
+    this.trailer = null;
+    this.count = 0;
+  }
+
+
+  // 6. void add(int index, int element): insere um elemento na lista na posição
+  // indicada por index
+  /* */
+  public void add(int index, int element) 
+  {
+    if (index < 1 || index > count + 1) 
+    {
+      System.out.println("A posição de índice está fora dos limites válidos.");
+      return;
+    }
+
+    Node novoNode = new Node(element);
+
+    if (isEmpty()) 
+    {
+      if (index == 1) 
+      {
+        this.header = novoNode;
+        this.trailer = novoNode;
+        this.count = 1;
+        System.out.println("Elemento adicionado com sucesso!");
+        return;
+      } else 
+      {
+        System.out.println("A lista está vazia, não será possível adicionar o elemento na posição desejada.");
+        return;
+      }
+    } else 
+    {
+      // Se o índice for 1, insira o elemento no início da lista.
+      if (index == 1) 
+      {
+        novoNode.next = header;
+        header = novoNode;
+      } else if (index == count + 1) 
+      {
+        // Se o índice for igual ao tamanho da lista mais 1, insira o elemento no final.
+        trailer.next = novoNode;
+        trailer = novoNode;
+      } else 
+      {
+        // Caso contrário, insira o elemento na posição desejada.
+        Node auxNode = header;
+
+        for (int i = 1; i < index - 1; i++) 
+        {
+          auxNode = auxNode.next;
+        }
+
+        novoNode.next = auxNode.next;
+        auxNode.next = novoNode;
+      }
+    }
+    count++;
+    System.out.println("Elemento adicionado com sucesso na posição " + index);
+  }
+
+
+  // 7. int get(int index): retorna o elemento da posição indicada por index
+  /* */
+  public int get(int index)
+  {
+    if (index < 1 || index > count) 
+    {
+      System.out.println("A posição de índice está fora dos limites válidos.");
+      return -1;
+    }
+    if (isEmpty()) 
+    {
+      System.out.println("A lista está vazia");
+      return -1;
+    }
+
+    Node auxNode = header;
+    int auxIndex = 1;
+
+    while (auxIndex < index) 
+    {
+      auxNode = auxNode.next;
+      auxIndex++;
+    }
+    return auxNode.element;
+  }
+
+
+  // 8. int set(index, e): substitui o valor na posição index pelo elemento
   // passado por parâmetro e retorna o valor antigo.
   /* */
   public int set(int index, int element) 
@@ -382,5 +521,4 @@ public class DoubleLinkedListOfInteger {
     return contador; // Retorna o número de ocorrências encontradas.
   }
 
-  
 }
