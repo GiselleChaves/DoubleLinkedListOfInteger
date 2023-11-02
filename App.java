@@ -14,10 +14,10 @@ public class App {
             System.out.println("-------- Choyse an option --------");
             System.out.println("1 - Method isEmpty");
             System.out.println("2 - Method size");
-            System.out.println("3 - Method contains");
-            System.out.println("4 - Method indexOf");
-            System.out.println("5 - Method clear");
-            System.out.println("6 - Method add");
+            System.out.println("3 - Method add");
+            System.out.println("4 - Method contains");
+            System.out.println("5 - Method indexOf");
+            System.out.println("6 - Method clear");
             System.out.println("7 - Method get");
             System.out.println("8 - Method set");
             System.out.println("9 - Method removeByIndex");
@@ -45,7 +45,7 @@ public class App {
                 long endIsEmpty = System.currentTimeMillis();
                 runTimeIsEmpty = endIsEmpty - startIsEmpty;
 
-                System.out.println("Resposta do Método: " + valueIsEmpty);
+                System.out.println("Resposta do Método IsEMpty: " + valueIsEmpty);
                 System.out.println("Tempo de Execução do Método isEmpty : " + runTimeIsEmpty);
                 System.out.println("");
                 break;
@@ -61,45 +61,60 @@ public class App {
                 long endSize = System.currentTimeMillis();
                 runTimeSize = endSize - startSize;
 
-                System.out.println("Resposta do Método: " + valueSize);
+                System.out.println("Resposta do Método size: " + valueSize);
                 System.out.println("Tempo de Execução do Método size : " + runTimeSize);
                 System.out.println("");
                 break;
 
-                //MÉTODO ADD NÃO ESTÁ FUNCIONANDO!!!!!
+                case 3:
+                System.out.println("----------------- Method Add -----------------");
+                
+                long runTimeAdd = 0;
+                long startAdd = System.currentTimeMillis();
+                
+                LinkedList list = linkedList.generateList();
+                
+                long endAdd = System.currentTimeMillis();
+                runTimeAdd = endAdd - startAdd;
+
+                System.out.println("Resposta do Método: Os valores adicionados à lista são:" + list);
+                System.out.println("Tempo de Execução do Método Add : " + runTimeAdd);
+                System.out.println("");
+                break;
+
+                case 4:
+                System.out.println("----------------- Method Contains -----------------");
+                
+                long runTimeContains = 0;
+                long startContains = System.currentTimeMillis();
+                
+                boolean returnContais = linkedList.contains(17);
+                
+                long endContains = System.currentTimeMillis();
+                runTimeContains = endContains - startContains;
+
+                System.out.println("Resposta do Método Contains: " + returnContais);
+                System.out.println("Tempo de Execução do Método Contains : " + runTimeContains);
+                System.out.println("");
+                break;
+
+                case 5:
+                System.out.println("----------------- Method indexOf -----------------");
+                
+                long runTimeIndexOf = 0;
+                long startIndexOf = System.currentTimeMillis();
+                
+                boolean returnIndexOf = linkedList.contains(17);
+                
+                long endIndexOf = System.currentTimeMillis();
+                runTimeIndexOf = endIndexOf - startIndexOf;
+
+                System.out.println("Resposta do Método indexOf: " + returnIndexOf);
+                System.out.println("Tempo de Execução do Método indexOf : " + runTimeIndexOf);
+                System.out.println("");
+                break;
             }
                 
         }while(option != 0);
-    }
-
-        /*long runTime = 0;
-        long start = System.currentTimeMillis();
-        
-        generateList(list);
-        
-        long end = System.currentTimeMillis();
-        runTime = end - start;
-        }
-          System.out.println("Tempo de Execução gerando os : " + tempoDeExecucao);
-        }
-        System.out.println("");*/
-        
-                
-        
-
-    
-    public static void generateList(LinkedList list){  
-        Random r = new Random();          
-        for(int i=0; i<5000; i++){
-            int number = r.nextInt();
-            list.add(number);
-        }
-        System.out.println(list.size());
-    }
-}
-=======
-public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
     }
 }
