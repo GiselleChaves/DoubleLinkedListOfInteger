@@ -78,13 +78,14 @@ public class DoubleLinkedListOfInteger {
     int indexAux = 0;
     if(!isEmpty()){
       Node nodeAux = header;
-      if(nodeAux.next.element != element){
-        indexAux++;
+      while(nodeAux != trailer){
+        if(nodeAux.next.element != element){
+          indexAux++;
+        }
       }
     }
     return indexAux;
   }
-
   /*
    * Method Clear
    * If the list is not empty, clear the list.
