@@ -50,7 +50,7 @@ public class Menu {
           System.out.println("");
           break;
 
-          case 2: //MÉTODO ADD NÃO ESTÁ FUNCIONANDO!!!!!
+          case 2:
           System.out.println("----------------- Method size -----------------");
           
           long runTimeSize = 0;
@@ -104,7 +104,6 @@ public class Menu {
           long runTimeIndexOf = 0;
           long startIndexOf = System.currentTimeMillis();
           
-
           int returnIndexOf = linkedList.indexOf(568942);
 
           long endIndexOf = System.currentTimeMillis();
@@ -121,7 +120,6 @@ public class Menu {
           long runTimeClear = 0;
           long startClear = System.currentTimeMillis();
           
-
           linkedList.clear();
 
           long endClear = System.currentTimeMillis();
@@ -137,12 +135,10 @@ public class Menu {
           long runTimeGet = 0;
           long startGet = System.currentTimeMillis();
           
-
           int returnGet = linkedList.get(7);
 
           long endGet = System.currentTimeMillis();
           runTimeGet = endGet - startGet;
-
           
           System.out.println("Resposta do Método get: " + returnGet);
           System.out.println("Tempo de Execução do Método get : " + runTimeGet);
@@ -155,7 +151,6 @@ public class Menu {
           long runTimeSet = 0;
           long startSet = System.currentTimeMillis();
           
-
           int returnSet = linkedList.set(7, 16);
 
           long endSet = System.currentTimeMillis();
@@ -165,6 +160,106 @@ public class Menu {
           System.out.println("Resposta do Método get: " + returnSet);
           System.out.println("Tempo de Execução do Método get : " + runTimeSet);
           System.out.println("");
+          break;
+
+          case 9:
+          System.out.println("----------------- Method removeByIndex -----------------");
+          
+          long runTimeRemoveByIndex = 0;
+          long startRemoveByIndex = System.currentTimeMillis();
+          
+          int returnRemoveByIndex = linkedList.removeByIndex(9);
+
+          long endRemoveByIndex = System.currentTimeMillis();
+          runTimeRemoveByIndex = endRemoveByIndex - startRemoveByIndex;
+
+          
+          System.out.println("Resposta do Método removeByIndex: " + returnRemoveByIndex);
+          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeRemoveByIndex);
+          System.out.println("");
+          break;
+
+          case 10:
+          System.out.println("----------------- Method removeAll -----------------");
+          
+          long runTimeRemoveAll = 0;
+          long startRemoveAll = System.currentTimeMillis();
+          
+          boolean returnRemoveAll = linkedList.removeAll(4563);
+
+          long endRemoveAll = System.currentTimeMillis();
+          runTimeRemoveAll = endRemoveAll - startRemoveAll;
+
+          System.out.println("Resposta do Método removeByIndex: " + returnRemoveAll);
+          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeRemoveAll);
+          System.out.println("");
+          break;
+
+          case 11:
+          System.out.println("----------------- Method subList -----------------");
+          
+          long runTimeSubList = 0;
+          long startSubList = System.currentTimeMillis();
+          
+          int[] returnSubList = linkedList.subList(0, 10);
+
+          long endSubList = System.currentTimeMillis();
+          runTimeSubList = endSubList - startSubList;
+
+          System.out.println("Resposta do Método removeByIndex: " + returnSubList);
+          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeSubList);
+          System.out.println("");
+          break;
+
+          case 12:
+          System.out.println("----------------- Method sort -----------------");
+          
+          long runTimeSort = 0;
+          long startSort = System.currentTimeMillis();
+          
+          int[] returnSort = linkedList.subList(0, 10);
+
+          long endSort = System.currentTimeMillis();
+          runTimeSort = endSort - startSort;
+
+          System.out.println("Resposta do Método removeByIndex: " + returnSort);
+          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeSort);
+          System.out.println("");
+          break;
+
+          case 13:
+          System.out.println("----------------- Method reverse -----------------");
+          
+          long runTimeReverse = 0;
+          long startReverse = System.currentTimeMillis();
+          
+          linkedList.reverse();
+
+          long endReverse = System.currentTimeMillis();
+          runTimeReverse = endReverse - startReverse;
+
+          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeReverse);
+          System.out.println("");
+          break;
+
+          case 14:
+          System.out.println("----------------- Method occurrencesAccount -----------------");
+          
+          long runTimeOccurrencesAccount = 0;
+          long startOccurrencesAccount = System.currentTimeMillis();
+          
+          int returnOccurrencesAccount = linkedList.occurrencesAccount(56);
+
+          long endOccurrencesAccount = System.currentTimeMillis();
+          runTimeOccurrencesAccount = endOccurrencesAccount - startOccurrencesAccount;
+
+          System.out.println("Resposta do Método removeByIndex: " + returnOccurrencesAccount);
+          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeOccurrencesAccount);
+          System.out.println("");
+          break;
+
+          case 0:
+          System.out.println("O sistema foi encerrado.");
           break;
       } 
     } while(option != 0);
