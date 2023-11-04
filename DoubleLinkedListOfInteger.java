@@ -381,8 +381,7 @@ public class DoubleLinkedListOfInteger {
    * Return the number of occurrent of the element
    * @return the number of occurrent of the element
    */
-  public int occurrencesAccount(int element) 
-  {
+  public int occurrencesAccount(int element) {
     int contador = 0; 
     Node auxNode = header;
 

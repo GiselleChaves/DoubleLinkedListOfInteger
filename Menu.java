@@ -43,9 +43,9 @@ public class Menu {
           boolean valueIsEmpty = linkedList.isEmpty();
           
           long endIsEmpty = System.currentTimeMillis();
-          runTimeIsEmpty = endIsEmpty - startIsEmpty;
+          runTimeIsEmpty = (endIsEmpty - startIsEmpty) * 1000000;
 
-          System.out.println("Resposta do Método IsEMpty: " + valueIsEmpty);
+          System.out.println("Resposta do Método isEmpty: " + valueIsEmpty);
           System.out.println("Tempo de Execução do Método isEmpty : " + runTimeIsEmpty);
           System.out.println("");
           break;
@@ -59,7 +59,7 @@ public class Menu {
           int valueSize = linkedList.size();
           
           long endSize = System.currentTimeMillis();
-          runTimeSize = endSize - startSize;
+          runTimeSize = (endSize - startSize) * 1000000;
 
           System.out.println("Resposta do Método size: " + valueSize);
           System.out.println("Tempo de Execução do Método size : " + runTimeSize);
@@ -75,7 +75,7 @@ public class Menu {
           LinkedList list = linkedList.generateList();
           
           long endAdd = System.currentTimeMillis();
-          runTimeAdd = endAdd - startAdd;
+          runTimeAdd = (endAdd - startAdd) * 1000000;
 
           System.out.println("Resposta do Método: Os valores adicionados à lista são:" + list);
           System.out.println("Tempo de Execução do Método Add : " + runTimeAdd);
@@ -91,7 +91,7 @@ public class Menu {
           boolean returnContais = linkedList.contains(17);
           
           long endContains = System.currentTimeMillis();
-          runTimeContains = endContains - startContains;
+          runTimeContains = (endContains - startContains) * 1000000;
 
           System.out.println("Resposta do Método Contains: " + returnContais);
           System.out.println("Tempo de Execução do Método Contains : " + runTimeContains);
@@ -107,7 +107,7 @@ public class Menu {
           int returnIndexOf = linkedList.indexOf(568942);
 
           long endIndexOf = System.currentTimeMillis();
-          runTimeIndexOf = endIndexOf - startIndexOf;
+          runTimeIndexOf = (endIndexOf - startIndexOf) * 1000000;
 
           System.out.println("Resposta do Método indexOf: " + returnIndexOf);
           System.out.println("Tempo de Execução do Método indexOf : " + runTimeIndexOf);
@@ -123,7 +123,7 @@ public class Menu {
           linkedList.clear();
 
           long endClear = System.currentTimeMillis();
-          runTimeClear = endClear - startClear;
+          runTimeClear = (endClear - startClear) * 1000000;
 
           System.out.println("Tempo de Execução do Método clear : " + runTimeClear);
           System.out.println("");
@@ -138,7 +138,7 @@ public class Menu {
           int returnGet = linkedList.get(7);
 
           long endGet = System.currentTimeMillis();
-          runTimeGet = endGet - startGet;
+          runTimeGet = (endGet - startGet) * 1000000;
           
           System.out.println("Resposta do Método get: " + returnGet);
           System.out.println("Tempo de Execução do Método get : " + runTimeGet);
@@ -154,7 +154,7 @@ public class Menu {
           int returnSet = linkedList.set(7, 16);
 
           long endSet = System.currentTimeMillis();
-          runTimeSet = endSet - startSet;
+          runTimeSet = (endSet - startSet) * 1000000;
 
           
           System.out.println("Resposta do Método get: " + returnSet);
@@ -171,7 +171,7 @@ public class Menu {
           int returnRemoveByIndex = linkedList.removeByIndex(9);
 
           long endRemoveByIndex = System.currentTimeMillis();
-          runTimeRemoveByIndex = endRemoveByIndex - startRemoveByIndex;
+          runTimeRemoveByIndex = (endRemoveByIndex - startRemoveByIndex) * 1000000;
 
           
           System.out.println("Resposta do Método removeByIndex: " + returnRemoveByIndex);
@@ -188,10 +188,10 @@ public class Menu {
           boolean returnRemoveAll = linkedList.removeAll(4563);
 
           long endRemoveAll = System.currentTimeMillis();
-          runTimeRemoveAll = endRemoveAll - startRemoveAll;
+          runTimeRemoveAll = (endRemoveAll - startRemoveAll) * 1000000;
 
-          System.out.println("Resposta do Método removeByIndex: " + returnRemoveAll);
-          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeRemoveAll);
+          System.out.println("Resposta do Método removeAll: " + returnRemoveAll);
+          System.out.println("Tempo de Execução do Método removeAll : " + runTimeRemoveAll);
           System.out.println("");
           break;
 
@@ -204,10 +204,10 @@ public class Menu {
           int[] returnSubList = linkedList.subList(0, 10);
 
           long endSubList = System.currentTimeMillis();
-          runTimeSubList = endSubList - startSubList;
+          runTimeSubList = (endSubList - startSubList) * 1000000;
 
-          System.out.println("Resposta do Método removeByIndex: " + returnSubList);
-          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeSubList);
+          System.out.println("Resposta do Método subList: " + returnSubList);
+          System.out.println("Tempo de Execução do Método subList : " + runTimeSubList);
           System.out.println("");
           break;
 
@@ -220,10 +220,10 @@ public class Menu {
           int[] returnSort = linkedList.subList(0, 10);
 
           long endSort = System.currentTimeMillis();
-          runTimeSort = endSort - startSort;
+          runTimeSort = (endSort - startSort) * 1000000;
 
-          System.out.println("Resposta do Método removeByIndex: " + returnSort);
-          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeSort);
+          System.out.println("Resposta do Método sort: " + returnSort);
+          System.out.println("Tempo de Execução do Método sort : " + runTimeSort);
           System.out.println("");
           break;
 
@@ -236,9 +236,9 @@ public class Menu {
           linkedList.reverse();
 
           long endReverse = System.currentTimeMillis();
-          runTimeReverse = endReverse - startReverse;
+          runTimeReverse = (endReverse - startReverse) * 1000000;
 
-          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeReverse);
+          System.out.println("Tempo de Execução do Método reverse : " + runTimeReverse);
           System.out.println("");
           break;
 
@@ -251,10 +251,10 @@ public class Menu {
           int returnOccurrencesAccount = linkedList.occurrencesAccount(56);
 
           long endOccurrencesAccount = System.currentTimeMillis();
-          runTimeOccurrencesAccount = endOccurrencesAccount - startOccurrencesAccount;
+          runTimeOccurrencesAccount = (endOccurrencesAccount - startOccurrencesAccount) * 1000000;
 
-          System.out.println("Resposta do Método removeByIndex: " + returnOccurrencesAccount);
-          System.out.println("Tempo de Execução do Método removeByIndex : " + runTimeOccurrencesAccount);
+          System.out.println("Resposta do Método occurrencesAccount: " + returnOccurrencesAccount);
+          System.out.println("Tempo de Execução do Método occurrencesAccount : " + runTimeOccurrencesAccount);
           System.out.println("");
           break;
 
